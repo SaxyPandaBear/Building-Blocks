@@ -38,11 +38,11 @@ This is a puzzle game with sandbox elements.
 </li>
 
 <li><strong>Game play:</strong>
-The player can use the arrow keys to control character movement, and can use the mouse to select and place down building blocks for the character to use to reach his destination. There are a limited number of blocks that the player has to use however. There is a button for the user to press which toggles the game input on and off, but only for the playable character. The blocks used for the puzzle are still able to be controlled even if the game is "paused".
+There is an exit door for the player, and you must use your blocks to jettison the player into the exit before time runs out. You use the mouse to pick up and drag the blocks, but you have no control over the player without the use of blocks.
 </li>
 
 <li><strong>Prototype goal:</strong>
-This game prototype is the first in which I venture into P2 physics in Phaser, as well as the first where I include the mouse as an input.
+This game prototype is the first in which I venture into P2 physics in Phaser, as well as the first where I include the mouse as an input. It's important to note that although I am using P2 physics, I am still just using rectangular shapes for this first demo of it, and don't have "smarter" polygon collision detection yet.
 </li>
 
 <li><strong>Features:</strong>
@@ -51,12 +51,10 @@ This game features:
         <li>usage of P2 physics</li>
         <li>mouse control</li>
         <li>defined end goal</li>
-        <li>start/stop feature for player control, but not for physics or block movement</li>
     </ul>
 </li>
 
 <li><strong>Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, put it here. If the game is abstract, then say so.
 This game takes place in a parallel universe, where you (the player), are watching over a young boy who is lost and needs to find his way back home. You are given the task of using your powers of manipulating blocks to help protect and guide Sora on his journey home.
 </li>
 
@@ -65,15 +63,15 @@ A young boy named Sora wakes up to find that he is lost and far away from home. 
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+This game is targeted towards families with young children, or just young children, because of the nature of the gameplay being simple, however the back story is rather dark.
 </li>
 
 <li><strong>Play time:</strong>
-Let's estimate it at 1 minute for now.
+Let's estimate it at 1 minute for now, since that is the timer for our game.
 </li>
 
 <li><strong>Strategies:</strong>
-First, the player has to determine the overall movement limitations of the character (i.e.: how far he can jump, etc.), and the player must then use this information to help them to construct bridges and the like that are possible for the character to use to navigate across terrain.
+Using blocks to catapult the player into the exit seems to be the most reasonable strategy with optimal success.
 </li>
 
 <li><strong>Prototype Assets:</strong>
@@ -93,6 +91,7 @@ Did you make your prototype assets from scratch? Did you borrow them? Cite your 
         <li>http://phaser.io/examples/v2/p2-physics/pick-up-object</li>
         <li>http://phaser.io/examples/v2/buttons/action-on-click</li>
         <li>http://phaser.io/examples/v2/time/basic-timed-event</li>
+        <li>http://examples.phaser.io/_site/view_full.html?d=sprites&f=overlap+without+physics.js&t=overlap%20without%20physics</li>
     </ul>
 </li>
 
