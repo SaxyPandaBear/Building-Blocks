@@ -100,7 +100,10 @@ window.onload = function() {
         victory = game.add.audio('victory'); victory.volume = 0.3;
         gameMusic = game.add.audio('gameMusic'); gameMusic.volume = 0.6;
         sounds = [waiting, victory, gameMusic];
-        game.sound.setDecodedCallback(sounds, toggleGame, this); 
+        game.sound.setDecodedCallback(sounds, toggleGame, this);
+        
+        //start with the waiting sound
+        waiting.play();
     }
 
     function update() {
@@ -146,6 +149,18 @@ window.onload = function() {
     //use button to start or reset game - disables input and resets blocks
     function toggleGame() {
         inputOn = !inputOn;
+        //toggle soundtrack to play depending on the gameplay status
+        if (waiting.isPlaying)
+        {
+            //if waiting audio is playing, then game is paused. If we toggle game, then we are starting/resuming, so change sounds
+            waiting.stop();
+            gameMusic.play();
+        }
+        else if (gameMusic.isPlaying)
+        {
+            gameMusic.stop();
+            waiting.play();
+        }
     }
     
     //function that is called if the player reaches the door and overlaps with it
@@ -167,12 +182,13 @@ window.onload = function() {
         if (wonGame)
         {
             //if the player has won the game, then we display a message that is encouraging, and play a happy sound.
-            var text = game.text.add();
+            var text = game.text.add(game.world.centerX, game.world.centerY, "You win!", {fontSize: '32px', fill: '#000000'});
             victory.play();
         }
         else
         {
             //otherwise, we just tell them that they lost, with no sound.
+            var text = game.text.add(game.world.centerX, game.world.centerY, "Game Over", {fontSize: '32px', fill: '#FF0000'});
         }
     }
 };
